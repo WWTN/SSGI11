@@ -6,7 +6,7 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="Default" ActionTag="953446860" Tag="5" IconVisible="False" ObjectIndex="2" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Default" ActionTag="953446860" Tag="5" IconVisible="False" ctype="SpriteObjectData">
             <Size X="960.0000" Y="640.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="480.0000" Y="320.0000" />
@@ -16,6 +16,17 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="HelloWorld.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="game_Ship" ActionTag="-336236641" Tag="4" IconVisible="False" LeftMargin="454.0000" RightMargin="460.0000" TopMargin="276.0000" BottomMargin="318.0000" ctype="SpriteObjectData">
+            <Size X="46.0000" Y="46.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="477.0000" Y="341.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4969" Y="0.5328" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>
