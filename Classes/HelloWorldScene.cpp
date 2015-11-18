@@ -2,6 +2,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -34,6 +35,14 @@ bool HelloWorld::init()
     auto rootNode = CSLoader::createNode("MainScene.csb");
 
     addChild(rootNode);
+
+	this->scheduleUpdate();
+
+	auto winSize = Director::getInstance()->getVisibleSize();
+
+	Sprite* asteroidSprite = (Sprite*)rootNode->getChildByName("Asteroid_1");
+	_asteroid1 = new Asteroid(1.0f, 1.0f);
+	_asteroid1->SetSprite(asteroidSprite);
 
     return true;
 }
