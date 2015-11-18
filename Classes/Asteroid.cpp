@@ -11,6 +11,7 @@ Asteroid::Asteroid(float startX, float startY)
 
 Asteroid::~Asteroid()
 {
+
 }
 
 void Asteroid::GenerateTrajectory(float endX, float endY)

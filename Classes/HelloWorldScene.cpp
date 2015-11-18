@@ -40,9 +40,24 @@ bool HelloWorld::init()
 
 	auto winSize = Director::getInstance()->getVisibleSize();
 
+	
+
 	Sprite* asteroidSprite = (Sprite*)rootNode->getChildByName("Asteroid_1");
-	_asteroid1 = new Asteroid(1.0f, 1.0f);
+	Asteroid* _asteroid1 = new Asteroid(winSize.width*0.5, winSize.height*0.5);
+	
+	// Currently for example, remove vec2 later
+	Vec2 myPos = Vec2(12, 12);
+	_asteroid1->setPosition(myPos);
 	_asteroid1->SetSprite(asteroidSprite);
+	Asteroid* _asteroid2 = new Asteroid(2.0f, 2.0f);
+	_asteroid2->SetSprite(asteroidSprite);
+	Asteroid* _asteroid3 = new Asteroid(3.0f, 3.0f);
+	_asteroid3->SetSprite(asteroidSprite);
 
     return true;
+}
+
+void HelloWorld::update(float deltaTime)
+{
+
 }

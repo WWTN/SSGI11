@@ -4,7 +4,9 @@
 
 using namespace cocos2d;
 
-class Asteroid : public cocos2d::Sprite , public cocos2d::Node
+// Override set position and call from constructor
+
+class Asteroid : public cocos2d::Sprite
 {
 public:
 	Asteroid(float startX, float startY);
@@ -16,12 +18,14 @@ public:
 	// Useful methods
 	void GenerateTrajectory(float endX, float endY);
 	void Reset();
+	// may be removed
 	virtual void Update(float);
 	void CollisionWithAsteroid();
 
 	// Start values
 	Vec2 startPoint;
 	Vec2 velocity;
+
 private:
 	cocos2d::Sprite* _sprite;
 };

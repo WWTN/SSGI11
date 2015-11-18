@@ -18,10 +18,7 @@ public:
     CREATE_FUNC(HelloWorld);
 
 	void update(float);
-private:
-	Asteroid* _asteroid1;
-	Asteroid* _asteroid2;
-	Asteroid* _asteroid3;	
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__
