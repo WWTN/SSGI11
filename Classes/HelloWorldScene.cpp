@@ -5,6 +5,9 @@
 
 USING_NS_CC;
 
+Asteroid* _asteroid1;
+Asteroid* _astObject;
+
 using namespace cocostudio::timeline;
 
 Scene* HelloWorld::createScene()
@@ -40,24 +43,63 @@ bool HelloWorld::init()
 
 	auto winSize = Director::getInstance()->getVisibleSize();
 
-	
+	// Set Sprite to be used
+	_astObject = new Asteroid();
+	addChild(_astObject->GetSprite());
+	//Asteroid* _asteroid1 = new Asteroid();
+	//_asteroid1->getSprite()->setPosition(Vec2(winSize.width/2,winSize.height/2));
+	//_asteroid1 = _asteroid1->create("Asteroid.png");
 
-	Sprite* asteroidSprite = (Sprite*)rootNode->getChildByName("Asteroid_1");
-	Asteroid* _asteroid1 = new Asteroid(winSize.width*0.5, winSize.height*0.5);
-	
-	// Currently for example, remove vec2 later
-	Vec2 myPos = Vec2(12, 12);
-	_asteroid1->setPosition(myPos);
-	_asteroid1->SetSprite(asteroidSprite);
-	Asteroid* _asteroid2 = new Asteroid(2.0f, 2.0f);
-	_asteroid2->SetSprite(asteroidSprite);
-	Asteroid* _asteroid3 = new Asteroid(3.0f, 3.0f);
-	_asteroid3->SetSprite(asteroidSprite);
+	//_asteroid1->SetSprite("Asteroid.png");
 
+	//rootNode->addChild(_asteroid1);
+	
+	// Currently for test, remove vec2 later
+	
+	
+	//Asteroid* _asteroid2 = new Asteroid(2.0f, 2.0f);
+	//_asteroid2->SetSprite(asteroidSprite);
+	//Asteroid* _asteroid3 = new Asteroid(3.0f, 3.0f);
+	//_asteroid3->SetSprite(asteroidSprite);
+
+	//this->addChild(_asteroid1);
+
+	// Touch listener init
+	auto touchListener = EventListenerTouchOneByOne::create();
+	// Callbacks for touch
+	touchListener->onTouchBegan = CC_CALLBACK_2(HelloWorld::onTouchBegan, this);
+	touchListener->onTouchEnded = CC_CALLBACK_2(HelloWorld::onTouchEnded, this);
+	touchListener->onTouchMoved = CC_CALLBACK_2(HelloWorld::onTouchMoved, this);
+	touchListener->onTouchCancelled = CC_CALLBACK_2(HelloWorld::onTouchCancelled, this);
+
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+	this->scheduleUpdate();
     return true;
 }
 
-void HelloWorld::update(float deltaTime)
+void HelloWorld::update(float delta)
+{
+	//_asteroid1->setPositionX(_asteroid1->currentPosX() + 1);
+	//Vec2 myPos = Vec2(20, 20);
+	//_asteroid1->setPosition(myPos);
+	_astObject->GetSprite()->setPosition(Vec2(_asteroid1->GetSprite()->getPosition().x + 1, _asteroid1->GetSprite()->getPosition().y + 1));
+}
+
+bool HelloWorld::onTouchBegan(Touch* touch, Event* event)
+{
+	cocos2d::log("touch began");
+	return true;
+}
+
+void HelloWorld::onTouchEnded(Touch* touch, Event* event)
+{
+
+}
+void HelloWorld::onTouchMoved(Touch* touch, Event* event)
+{
+
+}
+void HelloWorld::onTouchCancelled(Touch* touch, Event* event)
 {
 
 }

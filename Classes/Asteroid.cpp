@@ -1,11 +1,10 @@
 #include "Asteroid.h"
 #include "cocostudio/CocoStudio.h"
 
-Asteroid::Asteroid(float startX, float startY)
+Asteroid::Asteroid()
 {
-	//Create starpoint as asteroid is created
-	startPoint = Vec2(startX, startY);
 	velocity = Vec2(1,0);
+	this->init();
 }
 
 
@@ -14,7 +13,13 @@ Asteroid::~Asteroid()
 
 }
 
-void Asteroid::GenerateTrajectory(float endX, float endY)
+void Asteroid::init()
+{
+	_sprite = Sprite::create("Asteroid.png");
+	_sprite->setPosition(0.5, 0.5);
+}
+
+void Asteroid::UpdateTrajectory(float endX, float endY)
 {
 	// Store endpoint
 	Vec2 endPoint = Vec2(endX, endY);	
@@ -32,7 +37,15 @@ void Asteroid::Update(float deltaTime)
 	
 
 }
-void Asteroid::SetSprite(cocos2d::Sprite* sprite)
+
+cocos2d::Sprite* Asteroid::GetSprite()
 {
-	_sprite = sprite;
+	if (_sprite != nullptr)
+		return _sprite;
+	return nullptr;
+}
+
+void Asteroid::CollisionWithAsteroid()
+{
+	//if (this->getBoundingBox())
 }

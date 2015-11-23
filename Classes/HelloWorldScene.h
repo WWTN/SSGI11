@@ -7,6 +7,9 @@
 
 class HelloWorld : public cocos2d::Layer
 {
+private:
+	//Asteroid _astObject;
+
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
@@ -18,6 +21,12 @@ public:
     CREATE_FUNC(HelloWorld);
 
 	void update(float);
+
+	// Touch operations
+	virtual bool onTouchBegan(cocos2d::Touch*, cocos2d::Event*);
+	virtual void onTouchEnded(cocos2d::Touch*, cocos2d::Event*);
+	virtual void onTouchMoved(cocos2d::Touch*, cocos2d::Event*);
+	virtual void onTouchCancelled(cocos2d::Touch*, cocos2d::Event*);
 
 };
 
