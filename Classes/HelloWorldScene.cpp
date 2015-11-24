@@ -45,7 +45,7 @@ bool HelloWorld::init()
 
 	// Set Sprite to be used
 	_astObject = new Asteroid();
-	addChild(_astObject->GetSprite());
+	this->addChild(_astObject->GetSprite());
 	//Asteroid* _asteroid1 = new Asteroid();
 	//_asteroid1->getSprite()->setPosition(Vec2(winSize.width/2,winSize.height/2));
 	//_asteroid1 = _asteroid1->create("Asteroid.png");

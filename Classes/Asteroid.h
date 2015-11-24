@@ -2,11 +2,9 @@
 #include "HelloWorldScene.h"
 #include "cocos2d.h"
 
-using namespace cocos2d;
-
 // Override set position and call from constructor
 
-class Asteroid
+class Asteroid : public cocos2d::Node
 {
 public:
 	Asteroid();
@@ -16,10 +14,11 @@ public:
 	void SetSprite();
 
 	// Useful methods
+	static Asteroid* create();
 	void UpdateTrajectory(float endX, float endY);
 	void Reset();
 	void CollisionWithAsteroid();
-	void init();
+	virtual bool init() override;
 	//virtual Create();
 	// may be removed
 	virtual void Update(float);
@@ -33,6 +32,6 @@ public:
 
 private:
 	cocos2d::Sprite* _sprite;
-
+	cocos2d::Node* _rootNode;
 };
 
