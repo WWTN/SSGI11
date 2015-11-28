@@ -1,6 +1,7 @@
 #include "HelloWorldScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "game_player.h"
 
 USING_NS_CC;
 
@@ -35,7 +36,25 @@ bool HelloWorld::init()
 
 	addChild(rootNode);
 
+
+	//-----------------------------------------------------------------------------------------
+	//TOUCHES
+	//Set up a touch listener.
+	auto touchListener = EventListenerTouchOneByOne::create();
+
+
+	//Set callbacks for our touch functions.
+	touchListener->onTouchBegan = CC_CALLBACK_2(HelloWorld::onTouchBegan, this);
+	touchListener->onTouchEnded = CC_CALLBACK_2(HelloWorld::onTouchEnded, this);
+	touchListener->onTouchMoved = CC_CALLBACK_2(HelloWorld::onTouchMoved, this);
+	touchListener->onTouchCancelled = CC_CALLBACK_2(HelloWorld::onTouchCancelled, this);
+
+	//Add our touch listener to event listener list.
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+
 	return true;
+
+
 }
 //}
 ////
