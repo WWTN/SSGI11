@@ -48,11 +48,9 @@ bool game_player::init()
 	//bottomPipe = (Sprite*)rootNode->getChildByName("bottompipe");
 
 	//Set the start positions.
-	startXPosition = winSize.width;
-	startYPosition = winSize.height;
 
-	//Speed of pipes at start.
-	//currentSpeed = 200.0f;
+	//Speed of ship at initialisation
+	currentSpeed = 0.0f;
 
 	return true;
 }

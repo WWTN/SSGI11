@@ -2,18 +2,32 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "ui/CocosGUI.h"
 
 class HelloWorld : public cocos2d::Layer
 {
 public:
+
+	//Variables used in the game
+	bool StartButtonPressed();
+
+
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
 
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
 
+	// Update function, because otherwise it wouldn't
+	void update(float);
+
     // implement the "static create()" method manually
+
     CREATE_FUNC(HelloWorld);
+
+private:
+	cocos2d::Sprite*        game_Ship;
+	cocos2d::ui::Button*    startButton;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

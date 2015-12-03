@@ -2,6 +2,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "game_player.h"
+#include "GameManager.h"
 
 USING_NS_CC;
 
@@ -26,7 +27,7 @@ Scene* HelloWorld::createScene()
 bool HelloWorld::init()
 {
 	//////////////////////////////
-	// 1. super init first
+	// Initialisation
 	if (!Layer::init())
 	{
 		return false;
@@ -36,6 +37,16 @@ bool HelloWorld::init()
 
 	addChild(rootNode);
 
+		this->scheduleUpdate();
+	
+		auto winSize = Director::getInstance()->getVisibleSize();
+
+
+	//-----------------------------------------------------
+		//get references to stuff needed
+		
+		game_Ship = (Sprite*)rootNode->getChildByName("game_Ship");
+			
 
 	//-----------------------------------------------------------------------------------------
 	//TOUCHES
@@ -52,10 +63,37 @@ bool HelloWorld::init()
 	//Add our touch listener to event listener list.
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
 
+
+		//-----------------------------------------------------------------------------------------
+		//Start button.
+/*		startButton = static_cast<ui::Button*>(rootNode->getChildByName("temp_Go"));
+		startButton->addTouchEventListener(CC_CALLBACK_2(HelloWorld::StartButtonPressed, this));
+		startButton->setPosition(Vec2(winSize.width*0.5f, winSize.height*0.5f));
+		//-----------------------------------------------------------------------------------------*/
+
 	return true;
 
 
 }
+void HelloWorld::update(float delta)
+{
+	if (GameManager::sharedGameManager()->isGameLive)
+	{
+
+	}
+}
+
+/*
+bool MyLayer::isTouchingSprite(Touch* touch)
+{
+	// this works by calculating the distance between the sprite's
+	// center and the touch point, then seeing if that distance is
+	// less than the sprite's radius
+	float distance = this->sprite->getPosition().getDistance(
+		this->touchToPoint(touch));
+	return (distance < 100.0f);
+}
+*/
 //}
 ////
 ////addChild(rootNode);
@@ -103,12 +141,6 @@ bool HelloWorld::init()
 //	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
 //	//-----------------------------------------------------------------------------------------
 //
-//	//-----------------------------------------------------------------------------------------
-//	//Start button.
-//	startButton = static_cast<ui::Button*>(rootNode->getChildByName("startButton"));
-//	startButton->addTouchEventListener(CC_CALLBACK_2(HelloWorld::StartButtonPressed, this));
-//	startButton->setPosition(Vec2(winSize.width*0.5f, winSize.height*0.5f));
-//	//-----------------------------------------------------------------------------------------
 //
 //	// Game is not live until the start button is pressed.
 //	GameManager::sharedGameManager()->isGameLive = false;

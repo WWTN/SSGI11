@@ -6,13 +6,13 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="Default" ActionTag="953446860" Tag="5" IconVisible="False" LeftMargin="-36.3606" RightMargin="36.3606" TopMargin="7.0377" BottomMargin="-7.0377" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Default" ActionTag="953446860" Tag="5" IconVisible="False" LeftMargin="-44.3606" RightMargin="44.3606" TopMargin="7.0377" BottomMargin="-7.0377" ctype="SpriteObjectData">
             <Size X="960.0000" Y="640.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="443.6394" Y="312.9623" />
+            <Position X="435.6394" Y="312.9623" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4621" Y="0.4890" />
+            <PrePosition X="0.4538" Y="0.4890" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="HelloWorld.png" Plist="" />
             <BlendFunc Src="770" Dst="1" />
@@ -28,7 +28,7 @@
             <FileData Type="Normal" Path="PlayerShip.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="temp_Go" ActionTag="411901596" Tag="4" IconVisible="False" LeftMargin="453.7975" RightMargin="460.2025" TopMargin="402.2506" BottomMargin="201.7494" TouchEnable="True" FontSize="8" ButtonText="Temp Start" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="temp_Go" ActionTag="411901596" Tag="4" IconVisible="False" LeftMargin="453.7975" RightMargin="460.2025" TopMargin="402.2506" BottomMargin="201.7494" TouchEnable="True" FontSize="8" ButtonText="Temp Start" LeftEage="15" RightEage="22" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="9" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="46.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="476.7975" Y="219.7494" />

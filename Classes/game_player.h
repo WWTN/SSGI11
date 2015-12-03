@@ -32,10 +32,12 @@ public:
 private:
 
 	cocos2d::Sprite* game_Ship;
-	float            startXPosition;
-	float            startYPosition;
+
 	float            currentXPosition;
 	float            currentYPosition;
+	float			targetXPosition;
+	float			targetYPosition;
+	float			currentSpeed;
 };
 #endif /* defined(_BaseLandscapeProject__game_Player__) */
 
