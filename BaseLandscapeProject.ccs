@@ -6,6 +6,8 @@
         <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="HelloWorld.png" />
         <Image Name="PlayerShip.png" />
+        <Image Name="visibleTarget.png" />
+        <Image Name="invisibleTarget.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

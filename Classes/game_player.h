@@ -22,11 +22,15 @@ public:
 	game_player();
 	~game_player();
 	virtual bool init() override;
-	static game_player* create();
+	 game_player* create();
+
+	 
 	void         update(float);
 	bool         asteroidCollision(cocos2d::Rect collisionBoxToCheck);
 	void         reset();
 	bool			touchActive;
+
+//	bool withinBoundingBox( Sprite* ship, Sprite* target);
 
 	///////////////////////////////////////////////////////
 private:
@@ -38,6 +42,7 @@ private:
 	float			targetXPosition;
 	float			targetYPosition;
 	float			currentSpeed;
+	
 };
 #endif /* defined(_BaseLandscapeProject__game_Player__) */
 

@@ -44,7 +44,7 @@ bool game_player::init()
 
 
 	//Set references to the Sprite objects (pipes)
-	//topPipe = (Sprite*)rootNode->getChildByName("toppipe");
+	game_Ship = (Sprite*)rootNode->getChildByName("game_Ship");
 	//bottomPipe = (Sprite*)rootNode->getChildByName("bottompipe");
 
 	//Set the start positions.
@@ -57,7 +57,7 @@ bool game_player::init()
 
 void game_player::update (float updateTime)
 {
-
+	
 }
 
 //-------------------------------------------------------------------------
@@ -70,6 +70,27 @@ game_player::game_player()
 game_player::~game_player()
 {
 
-}
+}////-----------------------------------------------------------------------
+
+
+
 
 //-------------------------------------------------------------------------
+
+/*bool game_player::withinBoundingBox( Sprite* ship, Sprite* target)
+{
+	Rect spaceshipSize;
+	spaceshipSize.size = ship->getBoundingBox().size;
+	spaceshipSize.origin = convertToWorldSpaceAR(ship->getBoundingBox().origin);
+	Rect targetTrack;
+	targetTrack.size = target->getBoundingBox().size;
+	targetTrack.origin = convertToWorldSpaceAR(target->getBoundingBox().origin);
+
+
+	if (spaceshipSize.intersectsRect(targetTrack))
+	{ 
+		return true;}
+
+	else
+		return false;
+}*/

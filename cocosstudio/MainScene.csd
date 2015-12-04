@@ -43,6 +43,28 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="invisibleTarget" ActionTag="-863310394" Tag="5" IconVisible="False" LeftMargin="343.0000" RightMargin="571.0000" TopMargin="274.0000" BottomMargin="320.0000" ctype="SpriteObjectData">
+            <Size X="9.0000" Y="9.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="366.0000" Y="343.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.3812" Y="0.5359" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="invisibleTarget.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="visibleTarget" ActionTag="63813065" Tag="6" IconVisible="False" LeftMargin="583.0000" RightMargin="331.0000" TopMargin="272.0000" BottomMargin="322.0000" ctype="SpriteObjectData">
+            <Size X="71.0000" Y="68.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="606.0000" Y="345.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.6313" Y="0.5391" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="visibleTarget.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

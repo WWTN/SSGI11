@@ -32,6 +32,7 @@ bool HelloWorld::init()
 	{
 		return false;
 	}
+	
 
 	auto rootNode = CSLoader::createNode("MainScene.csb");
 
@@ -40,12 +41,17 @@ bool HelloWorld::init()
 		this->scheduleUpdate();
 	
 		auto winSize = Director::getInstance()->getVisibleSize();
-
+		
+	//	game_player obj;
 
 	//-----------------------------------------------------
 		//get references to stuff needed
 		
 		game_Ship = (Sprite*)rootNode->getChildByName("game_Ship");
+		invisibleTarget = (Sprite*)rootNode->getChildByName("invisibleTarget");
+
+		visibleTarget = (Sprite*)rootNode->getChildByName("visibleTarget");
+
 			
 
 	//-----------------------------------------------------------------------------------------
@@ -66,7 +72,7 @@ bool HelloWorld::init()
 
 		//-----------------------------------------------------------------------------------------
 		//Start button.
-/*		startButton = static_cast<ui::Button*>(rootNode->getChildByName("temp_Go"));
+	startButton = static_cast<ui::Button*>(rootNode->getChildByName("temp_Go"));	/*
 		startButton->addTouchEventListener(CC_CALLBACK_2(HelloWorld::StartButtonPressed, this));
 		startButton->setPosition(Vec2(winSize.width*0.5f, winSize.height*0.5f));
 		//-----------------------------------------------------------------------------------------*/
@@ -82,16 +88,42 @@ void HelloWorld::update(float delta)
 
 	}
 }
-
-/*
-bool MyLayer::isTouchingSprite(Touch* touch)
+void HelloWorld::onTouchMoved(Touch* touch, Event* event)
 {
-	// this works by calculating the distance between the sprite's
-	// center and the touch point, then seeing if that distance is
-	// less than the sprite's radius
-	float distance = this->sprite->getPosition().getDistance(
-		this->touchToPoint(touch));
-	return (distance < 100.0f);
+	if(targetingOnline){
+		visibleTarget->setPosition(touch->getLocation()); }
+}
+void HelloWorld::onTouchCancelled(Touch* touch, Event* event)
+{
+	
+}
+void HelloWorld::onTouchEnded(Touch* touch, Event* event)
+{
+	targetingOnline = false;
+}
+
+bool HelloWorld::onTouchBegan(Touch* touch, Event* event)
+{
+	invisibleTarget->setPosition(touch->getLocation());
+//	if (obj->withinBoundingBox( game_Ship, invisibleTarget) )
+	{
+		targetingOnline = true;
+	}
+
+
+	//game_Ship->setPosition(touch->getLocation());
+//	labelTouchInfo->setString("You Touched Here");
+	return true;
+}
+
+
+
+/* ->setPosition(touch->getLocation());
+bool HelloWorld::getTouchTarget(Touch* touch)
+{
+	
+		touchToPoint(touch));
+
 }
 */
 //}
@@ -147,3 +179,20 @@ bool MyLayer::isTouchingSprite(Touch* touch)
 //
 //	return true;
 //}
+/*
+void HelloWorld::moveToActivePointBeta()
+{
+	if (game_Ship->getPositionX > visibleTarget->getPositionX)
+	{(game_Ship->setPositionX = game_Ship->getPositionX - 0.5)}
+
+
+	if (game_Ship->getPositionY > visibleTarget->getPositionY)
+	{
+		(game_Ship->setPositionY = game_Ship->getPositionY - 0.5)
+	}
+
+
+
+
+}
+*/
