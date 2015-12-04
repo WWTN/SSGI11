@@ -52,7 +52,7 @@ bool HelloWorld::init()
 
 		visibleTarget = (Sprite*)rootNode->getChildByName("visibleTarget");
 
-			
+		//trajectory = new Vec2;
 
 	//-----------------------------------------------------------------------------------------
 	//TOUCHES
@@ -83,6 +83,8 @@ bool HelloWorld::init()
 }
 void HelloWorld::update(float delta)
 {
+
+	game_Ship->setPosition((HelloWorld::game_Ship->getPosition()+trajectory));
 	if (GameManager::sharedGameManager()->isGameLive)
 	{
 
@@ -110,7 +112,11 @@ bool HelloWorld::onTouchBegan(Touch* touch, Event* event)
 		targetingOnline = true;
 	}
 
+	Vec2 touchPaths = touch->getLocation();
 
+	trajectory = (Vec2(touchPaths - game_Ship->getPosition()));
+
+	trajectory.normalize();
 	//game_Ship->setPosition(touch->getLocation());
 //	labelTouchInfo->setString("You Touched Here");
 	return true;
@@ -179,16 +185,20 @@ bool HelloWorld::getTouchTarget(Touch* touch)
 //
 //	return true;
 //}
+
+
 /*
 void HelloWorld::moveToActivePointBeta()
 {
 	if (game_Ship->getPositionX > visibleTarget->getPositionX)
-	{(game_Ship->setPositionX = game_Ship->getPositionX - 0.5)}
+	{
+		(game_Ship->setPositionX = game_Ship->getPositionX - 0.5);
+	}
 
 
 	if (game_Ship->getPositionY > visibleTarget->getPositionY)
 	{
-		(game_Ship->setPositionY = game_Ship->getPositionY - 0.5)
+		(game_Ship->setPositionY = game_Ship->getPositionY - 0.5);
 	}
 
 

@@ -27,12 +27,13 @@ public:
 	 virtual void onTouchMoved(cocos2d::Touch*, cocos2d::Event*);
 	 virtual void onTouchCancelled(cocos2d::Touch*, cocos2d::Event*);
 	 cocos2d::Sprite*        game_Ship;
+	cocos2d::Vec2 trajectory;
 	
 	 //Okay, I might not need these right this second but I don't want to not have them later if I do end up needing them. It's messey but saving time is good
 		//?)
     // implement the "static create()" method manually
 //	 game_player* obj = new game_player;
-	 void    moveToActivePointBeta();
+//	 void    moveToActivePointBeta();
 
     CREATE_FUNC(HelloWorld);
 
